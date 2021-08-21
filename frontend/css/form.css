@@ -1,0 +1,121 @@
+.title-bar {
+  min-width: 150px;
+  min-height: 5px;
+  max-width: 150px;
+  max-height: 5px;
+  background-color: var(--primary);
+}
+
+.title {
+  font-family: Lato !important;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 48px;
+  text-align: center;
+  color: var(--gray-dark);
+}
+
+.photo-album {
+  max-width: 200px;
+  max-height: 300px;
+  border: 2px solid var(--primary);
+  box-sizing: border-box;
+  border-radius: var(--border-radius);
+}
+
+input,
+textarea,
+select {
+  background: var(--smooth-white) !important;
+  border: 2px solid var(--primary) !important;
+  box-sizing: border-box !important;
+  border-radius: var(--border-radius) !important;
+  /* overflow: hidden; */
+}
+
+label {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16x;
+  line-height: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+#firstPart,
+#secondPart {
+  padding: 50px;
+}
+
+textarea::-webkit-scrollbar {
+  display: none;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+/* Aparência que terá o seletor de arquivo */
+label.label-file {
+  cursor: pointer;
+}
+
+#info-responsavel {
+  padding: 20px;
+  width: 100%;
+  margin-left: 0px;
+  background: #ffffff;
+  border: 2px solid var(--primary);
+  box-sizing: border-box;
+  border-radius: var(--border-radius);
+
+  display: none;
+}
+
+#info-responsavel h3 {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 26px;
+}
+
+.fadeInAnimation {
+  animation: fadeIn 0.5s linear;
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: scale(0);
+    opacity: 0%;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 100%;
+  }
+}
+
+#secondPart {
+  display: none;
+}
+
+.reveal-animation {
+  display: block !important;
+  animation: reveal 1s linear;
+}
+
+@keyframes reveal {
+  0% {
+    transform: scale(.5);
+    opacity: 0%;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 100%;
+  }
+}
