@@ -17,21 +17,18 @@
 }
 
 .photo-album {
-  max-width: 200px;
-  max-height: 300px;
   border: 2px solid var(--primary);
   box-sizing: border-box;
   border-radius: var(--border-radius);
 }
 
-input,
-textarea,
-select {
-  background: var(--smooth-white) !important;
-  border: 2px solid var(--primary) !important;
-  box-sizing: border-box !important;
-  border-radius: var(--border-radius) !important;
-  /* overflow: hidden; */
+input.form-control,
+textarea.form-control,
+select.form-control {
+  background: var(--smooth-white);
+  border: 2px solid var(--primary);
+  box-sizing: border-box;
+  border-radius: var(--border-radius);
 }
 
 label {
@@ -44,11 +41,6 @@ label {
 
 .form-group {
   margin-bottom: 20px;
-}
-
-#firstPart,
-#secondPart {
-  padding: 50px;
 }
 
 textarea::-webkit-scrollbar {

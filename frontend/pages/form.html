@@ -27,13 +27,13 @@
 </head>
 
 <body>
-  <main class="container">
+  <main class="container container-md container-lg">
     <div class="row d-flex justify-content-center">
       <h1 class="h2 text-center title">Álbum digital</h1>
-      <div class="title-bar"></div>
+      <div class="title-bar mb-2"></div>
     </div>
     <form id="form" class="row" action="">
-      <div class="col-sm-6" id="firstPart">
+      <div class="col-md-6 p-5 p-sm-3 px-lg-4" id="firstPart">
         <div class="form-group">
           <label for="name">Nome:</label>
           <input type="text" class="form-control" id="iname" placeholder="Ex.: João da silva" />
@@ -166,12 +166,12 @@
         </div>
         <button type="button" id="next-button" class="btn btn-primary">Próximo</button>
       </div>
-      <div class="col-sm-6" id="secondPart">
-        <div class="row">
-          <div class="col-sm-4 d-flex justify-content-center flex-wrap">
+      <div class="col-md-6 p-5 p-sm-3 mt-5 mt-md-0 px-lg-4" id="secondPart">
+        <div class="row justify-content-center">
+          <div class="col-7 col-sm-8 col-lg-6 col-xl-4 d-flex justify-content-center flex-wrap">
             <img
               src="https://images.pexels.com/photos/2825034/pexels-photo-2825034.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=300&w=200"
-              class="photo-album" alt="" />
+              class="photo-album img-fluid" alt="" />
             <div class="form-group">
               <label for="photo" class="label-file">
                 <button type="button" class="btn btn-link" disabled>📷 Escolha sua foto</button>
@@ -179,7 +179,7 @@
               <input type="file" class="form-control-file" id="photo" placeholder="Sua foto">
             </div>
           </div>
-          <div class="col-sm-8">
+          <div class="col-sm-8 col-md-12 col-xl-8">
             <div class="form-group">
               <label for="titlePhoto">Título da foto:</label>
               <input type="text" id="titlePhoto" class="form-control" placeholder="Ex.: Lindo sorriso" />
