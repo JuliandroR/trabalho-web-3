@@ -1,9 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
 
-.navbar {
-  font-family: 'Lato', sans-serif;
-}
-
 .navbar-light .navbar-nav .nav-link.active { 
   color: #F56B39; 
 }
@@ -120,9 +116,4 @@ label.label-file {
     transform: scale(1);
     opacity: 100%;
   }
-}
-
-footer ion-icon {
-  font-size: 50px;
-  color: #F56B39;
 }
