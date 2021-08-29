@@ -54,37 +54,37 @@
       <h1 class="h2 text-center title">Álbum digital</h1>
       <div class="title-bar mb-2"></div>
     </div>
-    <form id="form" class="row" action="">
+    <form id="form" class="row" method="POST" action="form">
       <div class="col-md-6 p-5 p-sm-3 px-lg-4" id="firstPart">
         <div class="form-group">
           <label for="name">Nome:</label>
-          <input type="text" class="form-control" id="iname" placeholder="Ex.: João da silva" />
+          <input type="text" class="form-control" id="iname" name="name" placeholder="Ex.: João da silva" />
         </div>
         <div class="form-group">
           <label for="cpf">CPF:</label>
-          <input type="text" class="form-control" id="cpf" placeholder="Ex.: 123.123.123-12"
+          <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Ex.: 123.123.123-12"
             oninput="applyMask(this, 'cpf')" />
         </div>
         <div class="form-group">
           <label for="email">E-mail:</label>
-          <input type="email" id="email" class="form-control" placeholder="Ex.: seuemail@dominio.com" />
+          <input type="email" id="email" class="form-control" name="email" placeholder="Ex.: seuemail@dominio.com" />
         </div>
         <div class="form-group">
           <label for="phone">Telefone/Whatsapp:</label>
-          <input id="phone" class="form-control" type="tel" placeholder="Ex.: (67) 9 9999-9999"
+          <input id="phone" class="form-control" type="tel" name="phone" placeholder="Ex.: (67) 9 9999-9999"
             oninput="applyMask(this, 'phone')" />
         </div>
         <div class="row d-flex justify-content-between">
           <div class="form-group col-sm-3">
             <label for="state">Estado:</label>
-            <select class="form-control" id="state">
+            <select class="form-control" id="state" name="state">
               <option></option>
               <option>MS</option>
             </select>
           </div>
           <div class="form-group col-sm-9">
             <label for="state">Estado:</label>
-            <select class="form-control" id="city">
+            <select class="form-control" id="city" name="city">
               <option></option>
               <option>Água Clara</option>
               <option>Alcinópolis</option>
@@ -170,18 +170,18 @@
         </div>
         <div class="form-group">
           <label for="bornDate">Data de nascimento:</label>
-          <input type="date" id="bornDate" class="form-control" />
+          <input type="date" id="bornDate" name="born_date" class="form-control" />
         </div>
         <div class="row" id="info-responsavel">
           <div class="col-sm-12">
             <h3 class="h3 text-center">Dados do responsável</h3>
             <div class="form-group">
               <label for="nameResponsavel">Nome do responsável:</label>
-              <input type="text" class="form-control" id="nameResponsavel" placeholder="Ex.: João da silva" />
+              <input type="text" class="form-control" id="nameResponsavel" name="resp_name" placeholder="Ex.: João da silva" />
             </div>
             <div class="form-group">
               <label for="cpfResponsavel">CPF do Responsável:</label>
-              <input type="text" class="form-control" id="cpfResponsavel" placeholder="Ex.: 123.123.123-12"
+              <input type="text" class="form-control" id="cpfResponsavel" name="resp_cpf" placeholder="Ex.: 123.123.123-12"
                 oninput="applyMask(this, 'cpf')" />
             </div>
           </div>
@@ -198,17 +198,17 @@
               <label for="photo" class="label-file">
                 <button type="button" class="btn btn-link" disabled>📷 Escolha sua foto</button>
               </label>
-              <input type="file" class="form-control-file" id="photo" placeholder="Sua foto">
+              <input type="file" class="form-control-file" id="photo" name="photo" placeholder="Sua foto">
             </div>
           </div>
           <div class="col-sm-8 col-md-12 col-xl-8">
             <div class="form-group">
               <label for="titlePhoto">Título da foto:</label>
-              <input type="text" id="titlePhoto" class="form-control" placeholder="Ex.: Lindo sorriso" />
+              <input type="text" id="titlePhoto" class="form-control" name="photo_title" placeholder="Ex.: Lindo sorriso" />
             </div>
             <div class="form-group">
               <label for="authorPhoto">Nome do fotógrafo:</label>
-              <input type="text" id="titlePhoto" class="form-control" placeholder="Ex.: João da Silva" />
+              <input type="text" id="titlePhoto" class="form-control" name="photographer" placeholder="Ex.: João da Silva" />
             </div>
           </div>
         </div>

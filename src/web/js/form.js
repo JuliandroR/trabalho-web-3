@@ -58,9 +58,9 @@ function processDataFromForm(submitEvent) {
   submitEvent.preventDefault();
   form = submitEvent.target;
 
-  if (!validateRegisterForm(form)) return;
+  //if (!validateRegisterForm(form)) return;
 
-  console.log('Se o formulário for válido');
+  form.submit()
 }
 
 function validateRegisterForm(form) {

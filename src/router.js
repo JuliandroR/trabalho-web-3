@@ -1,9 +1,9 @@
-const { Router } = require('express');
-const form = require('./form')
+import { Router } from 'express';
+import { processData } from './form';
 
 const router = Router();
 
-router.post('/form', form.processData)
+router.post('/form', processData)
 
 
-module.exports = router;
+export default router;
