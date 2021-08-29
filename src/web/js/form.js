@@ -140,3 +140,18 @@ function validateRegisterForm(form) {
 
   return valid
 }
+
+
+var myModal = document.getElementById('successSendModal')
+var myInput = document.getElementById('buttonmodal')
+
+myModal.addEventListener('shown.bs.modal', function () {
+  myInput.focus()
+})
+
+var myModalF = document.getElementById('failureSendModal')
+var myInputF = document.getElementById('buttonmodalfailure')
+
+myModalF.addEventListener('shown.bs.modal', function () {
+  myInputF.focus()
+})
