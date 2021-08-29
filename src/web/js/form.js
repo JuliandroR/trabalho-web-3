@@ -60,7 +60,24 @@ function processDataFromForm(submitEvent) {
 
   //if (!validateRegisterForm(form)) return;
 
-  form.submit()
+  
+  const data = new FormData(submitEvent.target);
+  const value = Object.fromEntries(data.entries());
+
+  fetch('form', {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(value)
+  })
+  .then(resp => resp.text().then(console.log))
+
+    console.log(value);
+
+
+  //form.submit()
 }
 
 function validateRegisterForm(form) {
