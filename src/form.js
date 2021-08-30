@@ -3,7 +3,6 @@ import connection from './pool'
 
 export async function processData(req, res) {
     const data = req.body
-    console.log(data);
 
     const { resp_name, resp_cpf } = data;
     const { photo, photo_title, photographer } = data;
@@ -20,7 +19,7 @@ export async function processData(req, res) {
             [name, cpf, email, phone, state, city, born_date, responsible_id])
             .then(() => {
                 res.status(201).json({ error: false })
-            })
+            }).catch(err => res.status(422).json({ error: true, }))
 
     } catch (e) {
         res.status(422).json({ error: true, })

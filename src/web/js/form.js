@@ -11,12 +11,12 @@ window.onload = function () {
     let dateNow = new Date().getFullYear();
     let bornDate = new Date(bornDateInput.value).getFullYear();
 
-    //if (dateNow - bornDate < 18) {
-    infoResponsavel.style.display = 'block';
-    infoResponsavel.classList.add('fadeInAnimation');
-    //} else {
-    //infoResponsavel.style.display = 'none';
-    //}
+    if (dateNow - bornDate < 18) {
+      infoResponsavel.style.display = 'block';
+      infoResponsavel.classList.add('fadeInAnimation');
+    } else {
+      infoResponsavel.style.display = 'none';
+    }
 
 
   });
@@ -60,7 +60,6 @@ function processDataFromForm(submitEvent) {
 
   //if (!validateRegisterForm(form)) return;
 
-  
   const data = new FormData(submitEvent.target);
   const value = Object.fromEntries(data.entries());
 
@@ -72,12 +71,7 @@ function processDataFromForm(submitEvent) {
     },
     body: JSON.stringify(value)
   })
-  .then(resp => resp.text().then(console.log))
-
-    console.log(value);
-
-
-  //form.submit()
+    .then(resp => resp.json().then(treatReturn))
 }
 
 function validateRegisterForm(form) {
@@ -158,17 +152,14 @@ function validateRegisterForm(form) {
   return valid
 }
 
+function treatReturn(response) {
+  let modal
 
-var myModal = document.getElementById('successSendModal')
-var myInput = document.getElementById('buttonmodal')
 
-myModal.addEventListener('shown.bs.modal', function () {
-  myInput.focus()
-})
+  if (!response.error)
+    modal = new bootstrap.Modal(document.getElementById('successSendModal'))
+  else
+    modal = new bootstrap.Modal(document.getElementById('failureSendModal'))
 
-var myModalF = document.getElementById('failureSendModal')
-var myInputF = document.getElementById('buttonmodalfailure')
-
-myModalF.addEventListener('shown.bs.modal', function () {
-  myInputF.focus()
-})
+  modal.show()
+}
