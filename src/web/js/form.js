@@ -58,7 +58,7 @@ function processDataFromForm(submitEvent) {
   submitEvent.preventDefault();
   form = submitEvent.target;
 
-  //if (!validateRegisterForm(form)) return;
+  if (!validateRegisterForm(form)) return;
 
   const data = new FormData(submitEvent.target);
   const value = Object.fromEntries(data.entries());
