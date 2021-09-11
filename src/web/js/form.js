@@ -115,7 +115,7 @@ function validateRegisterForm(form) {
     makeInvalid(cpf);
 
   // E-mail validation
-  if (emailText.match(/^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i))
+  if (emailText.match(/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/))
     makeValid(email);
   else
     makeInvalid(email);
