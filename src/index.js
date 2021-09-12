@@ -1,5 +1,6 @@
 import express, { json, urlencoded } from 'express';
 import router from './router';
+
 const app = express()
 const port = 3000
 

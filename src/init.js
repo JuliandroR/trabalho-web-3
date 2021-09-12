@@ -32,10 +32,11 @@ import connection from './pool'
         'CREATE TABLE IF NOT EXISTS photo( \
             id serial, \
             title varchar(128), \
-            img bytea, \
-            photographer int, \
+            img varchar(128), \
+            photographer varchar(128), \
+            owner int, \
             PRIMARY KEY(id), \
-            FOREIGN KEY(photographer) \
+            FOREIGN KEY(owner) \
                 REFERENCES collaborator(id) \
         );',
         resultHandle
@@ -44,11 +45,9 @@ import connection from './pool'
 })();
 
 function resultHandle(err, res) {
-    if (err) {
+    if (err != null) {
         connection.end();
         console.err(err);
         process.exit(1);
     }
-
-    //console.log(res);
 }

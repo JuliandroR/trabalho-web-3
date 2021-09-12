@@ -105,4 +105,6 @@ dist
 
 data
 
+package-lock.json
 yarn.lock
+images

@@ -61,15 +61,15 @@ function processDataFromForm(submitEvent) {
   if (!validateRegisterForm(form)) return;
 
   const data = new FormData(submitEvent.target);
+  console.log(data.get('photo'));
   const value = Object.fromEntries(data.entries());
 
   fetch('form', {
     method: 'POST',
     headers: {
-      'Accept': 'application/json',
-      'Content-Type': 'application/json'
+      'Accept': 'application/json'
     },
-    body: JSON.stringify(value)
+    body: data
   })
     .then(resp => resp.json().then(treatReturn))
 }
