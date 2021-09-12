@@ -5,18 +5,29 @@ window.onload = function () {
   const secondPart = document.getElementById('secondPart')
   const nextButton = document.getElementById('next-button')
 
+  const photoInput = document.getElementById("photo");
+
   const form = document.getElementById('form');
 
   bornDateInput.addEventListener('change', () => {
     let dateNow = new Date().getFullYear();
     let bornDate = new Date(bornDateInput.value).getFullYear();
+    let required = false;
 
     if (dateNow - bornDate < 18) {
       infoResponsavel.style.display = 'block';
       infoResponsavel.classList.add('fadeInAnimation');
+      required = true;
+
     } else {
       infoResponsavel.style.display = 'none';
+      required = false;
     }
+    
+    
+    document.getElementById("cpf").required = !required;
+    document.getElementById("nameResponsavel").required = required;
+    document.getElementById("cpfResponsavel").required = required;
 
 
   });
@@ -24,6 +35,23 @@ window.onload = function () {
 
   nextButton.addEventListener('click', () => {
     secondPart.classList.add('reveal-animation')
+    nextButton.style.display = "none";
+  })
+
+  photoInput.addEventListener("change", () => {
+    const previewImage = document.getElementById("preview-image")
+    let reader  = new FileReader();
+    let file = photoInput.files[0]
+
+    reader.onloadend = function () {
+      previewImage.src = reader.result;
+    }  
+
+    if (file) {
+    reader.readAsDataURL(file);
+  } else {
+    previewImage.src = "";
+  }
   })
 
   form.onsubmit = processDataFromForm;
@@ -61,8 +89,9 @@ function processDataFromForm(submitEvent) {
   if (!validateRegisterForm(form)) return;
 
   const data = new FormData(submitEvent.target);
-  console.log(data.get('photo'));
-  const value = Object.fromEntries(data.entries());
+  data.set('cpf', data.get('cpf').replace(/[^\d]/g, ''))
+  data.set('resp_cpf', data.get('resp_cpf').replace(/[^\d]/g, ''))
+  data.set('phone', data.get('phone').replace(/[^\d]/g, ''))
 
   fetch('form', {
     method: 'POST',

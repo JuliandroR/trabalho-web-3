@@ -88,7 +88,12 @@
               id="iname"
               name="name"
               placeholder="Ex.: João da silva"
+              required
             />
+          </div>
+          <div class="form-group">
+            <label for="bornDate">Data de nascimento:</label>
+            <input type="date" id="bornDate" name="born_date" class="form-control" required/>
           </div>
           <div class="form-group">
             <label for="cpf">CPF:</label>
@@ -109,6 +114,7 @@
               name="email"
               class="form-control"
               placeholder="Ex.: seuemail@dominio.com"
+              required
             />
           </div>
           <div class="form-group">
@@ -120,19 +126,20 @@
               name="phone"
               placeholder="Ex.: (67) 9 9999-9999"
               oninput="applyMask(this, 'phone')"
+              required
             />
           </div>
           <div class="row d-flex justify-content-between">
             <div class="form-group col-sm-3">
               <label for="state">Estado:</label>
-              <select class="form-control" id="state" name="state">
+              <select class="form-control" id="state" name="state" required>
                 <option></option>
                 <option>MS</option>
               </select>
             </div>
             <div class="form-group col-sm-9">
-              <label for="state">Estado:</label>
-              <select class="form-control" id="city" name="city">
+              <label for="state">Cidade:</label>
+              <select class="form-control" id="city" name="city" required>
                 <option></option>
                 <option>Água Clara</option>
                 <option>Alcinópolis</option>
@@ -216,10 +223,6 @@
               </select>
             </div>
           </div>
-          <div class="form-group">
-            <label for="bornDate">Data de nascimento:</label>
-            <input type="date" id="bornDate" name="born_date" class="form-control" />
-          </div>
           <div class="row" id="info-responsavel">
             <div class="col-sm-12">
               <h3 class="h3 text-center">Dados do responsável</h3>
@@ -264,6 +267,7 @@
                 src="https://images.pexels.com/photos/2825034/pexels-photo-2825034.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=300&w=200"
                 class="photo-album img-fluid"
                 alt=""
+                id="preview-image"
               />
               <div class="form-group">
                 <label for="photo" class="label-file">
@@ -277,6 +281,7 @@
                   id="photo"
                   name="photo"
                   placeholder="Sua foto"
+                  required
                 />
               </div>
             </div>
@@ -289,6 +294,7 @@
                   name="title_photo"
                   class="form-control"
                   placeholder="Ex.: Lindo sorriso"
+                  required
                 />
               </div>
               <div class="form-group">
@@ -299,6 +305,7 @@
                   class="form-control"
                   name="photographer"
                   placeholder="Ex.: João da Silva"
+                  required
                 />
               </div>
             </div>

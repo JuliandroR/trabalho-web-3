@@ -45,9 +45,9 @@ import connection from './pool'
 })();
 
 function resultHandle(err, res) {
-    if (err != null) {
+    if (err) {
         connection.end();
-        console.err(err);
+        console.error(err);
         process.exit(1);
     }
 }

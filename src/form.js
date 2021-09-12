@@ -3,6 +3,7 @@ import connection from './pool'
 
 export async function processData(req, res) {
     const data = req.body
+    console.log(data);
 
     const photo = req.file.path
 
@@ -27,7 +28,7 @@ export async function processData(req, res) {
                 )
 
                 res.status(201).json({ error: false })
-            }).catch(err => res.status(422).json({ error: true, }))
+            })
 
     } catch (e) {
         console.error(e);
