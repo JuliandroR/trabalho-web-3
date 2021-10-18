@@ -86,14 +86,14 @@ function processDataFromForm(submitEvent) {
   submitEvent.preventDefault();
   form = submitEvent.target;
 
-  if (!validateRegisterForm(form)) return;
+  //if (!validateRegisterForm(form)) return;
 
   const data = new FormData(submitEvent.target);
   data.set('cpf', data.get('cpf').replace(/[^\d]/g, ''))
   data.set('resp_cpf', data.get('resp_cpf').replace(/[^\d]/g, ''))
   data.set('phone', data.get('phone').replace(/[^\d]/g, ''))
 
-  fetch('form', {
+  fetch('api/form', {
     method: 'POST',
     headers: {
       'Accept': 'application/json'

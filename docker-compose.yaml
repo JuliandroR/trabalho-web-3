@@ -20,7 +20,7 @@ services:
       PGADMIN_DEFAULT_EMAIL: "admin@mail.com"
       PGADMIN_DEFAULT_PASSWORD: "admin"
     ports:
-      - "8080:80"
+      - "3002:80"
     depends_on:
       - db
     links:
