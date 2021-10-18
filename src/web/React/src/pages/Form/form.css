@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap');
+
+.navbar {
+  font-family: 'Lato', sans-serif;
+}
+
+.navbar-light .navbar-nav .nav-link.active { 
+  color: #F56B39; 
+}
+
+.title-bar {
+  min-width: 150px;
+  min-height: 5px;
+  max-width: 150px;
+  max-height: 5px;
+  background-color: var(--primary);
+}
+
+.title {
+  font-family: Lato !important;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 48px;
+  /* text-align: center; */
+  color: var(--gray-dark);
+}
+
+.photo-album {
+  border: 2px solid var(--primary);
+  box-sizing: border-box;
+  border-radius: var(--border-radius);
+}
+
+input.form-control,
+textarea.form-control,
+select.form-control {
+  background: var(--smooth-white);
+  border: 2px solid var(--primary);
+  box-sizing: border-box;
+  border-radius: var(--border-radius);
+}
+
+label {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16x;
+  line-height: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+textarea::-webkit-scrollbar {
+  display: none;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+/* Aparência que terá o seletor de arquivo */
+label.label-file {
+  cursor: pointer;
+}
+
+#info-responsavel {
+  padding: 20px;
+  width: 100%;
+  margin-left: 0px;
+  background: #ffffff;
+  border: 2px solid var(--primary);
+  box-sizing: border-box;
+  border-radius: var(--border-radius);
+
+  display: none;
+}
+
+#info-responsavel h3 {
+  font-family: Lato;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 22px;
+  line-height: 26px;
+}
+
+.fadeInAnimation {
+  animation: fadeIn 0.5s linear;
+}
+
+@keyframes fadeIn {
+  0% {
+    transform: scale(0);
+    opacity: 0%;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 100%;
+  }
+}
+
+#secondPart {
+  display: none;
+}
+
+.reveal-animation {
+  display: block !important;
+  animation: reveal 1s linear;
+}
+
+@keyframes reveal {
+  0% {
+    transform: scale(.5);
+    opacity: 0%;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 100%;
+  }
+}
+
+footer ion-icon {
+  font-size: 50px;
+  color: #F56B39;
+}
