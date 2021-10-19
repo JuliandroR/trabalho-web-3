@@ -1,10 +1,8 @@
-import { Collaborator, Photo, Responsible } from '../app/models'
+import { Collaborator, Photo, Responsible } from '../models'
 
 export async function processData(req, res) {
     const data = req.body
-    console.log(data);
-
-    const photo = (req.file)? req.file.path : ''
+    const photo = (req.file)? req.file.filename : ''
 
     const { resp_name, resp_cpf } = data;
     const { title_photo, photographer } = data;
@@ -77,7 +75,7 @@ export async function getImages(req, res) {
     
     const base = req.protocol + '://' + req.get('host') + '/uploads/'
     results.map(photo => {
-        photo.img = new URL(base + photo.img.split('/')[1]).toString()
+        photo.img = new URL(base + photo.img).toString()
     })
 
     res.json(results)

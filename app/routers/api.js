@@ -1,10 +1,13 @@
 import { Router } from 'express';
 import multer from 'multer'
-import { getImages, processData } from './form';
+import { getImages, processData } from '../controllers/AlbumController';
+import { mkdirSync } from 'fs'
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, 'images/');
+        const path = 'data/images'
+        mkdirSync(path, { recursive: true })
+        cb(null, path);
     },
     filename: (req, file, cb) => {
         cb(null, file.originalname);
