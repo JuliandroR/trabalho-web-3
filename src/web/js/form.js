@@ -93,7 +93,7 @@ function processDataFromForm(submitEvent) {
   data.set('resp_cpf', data.get('resp_cpf').replace(/[^\d]/g, ''))
   data.set('phone', data.get('phone').replace(/[^\d]/g, ''))
 
-  fetch('api/form', {
+  fetch('/api/form', {
     method: 'POST',
     headers: {
       'Accept': 'application/json'
