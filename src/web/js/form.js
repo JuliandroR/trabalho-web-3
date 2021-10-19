@@ -86,7 +86,7 @@ function processDataFromForm(submitEvent) {
   submitEvent.preventDefault();
   form = submitEvent.target;
 
-  //if (!validateRegisterForm(form)) return;
+  if (!validateRegisterForm(form)) return;
 
   const data = new FormData(submitEvent.target);
   data.set('cpf', data.get('cpf').replace(/[^\d]/g, ''))
