@@ -1,4 +1,5 @@
 import express, { json, urlencoded } from 'express';
+import cors from "cors";
 import router from './router';
 import db from '../app/models'
 
@@ -6,6 +7,7 @@ const app = express()
 const port = 3001
 db.init()
 
+app.use(cors())
 app.use(json()); 
 app.use(urlencoded({ extended: true })); 
 

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+
+    <link rel="stylesheet" href="../css/form.css" />
+    <link rel="stylesheet" href="../css/animations.css" />
+    <link rel="stylesheet" href="../css/global.css" />
+    <title>Login - Negritude em Debate</title>
+  </head>
+  <body>
+    <div class="container-md w-100 h-100 d-flex mt-5">
+      <div class="row d-flex align-items-center card-login w-75 m-auto">
+        <div class="col-md-5 p-0 m-0">
+          <img src="../img/login.png" class="w-100 p-0 m-0" alt="" />
+        </div>
+        <div
+          class="
+            col-md-7
+            p-5
+            m-0
+            d-flex
+            row
+            align-items-center
+            justify-content-start
+            h-75
+          "
+        >
+          <div class="row d-flex justify-content-start mb-3">
+            <h1 class="h2 text-left title">Entrar</h1>
+            <div class="title-bar mb-3"></div>
+          </div>
+
+          <form id="form" class="row w-75" action="">
+            <div class="form-group">
+              <label for="email">Usuário:</label>
+              <input type="text" id="user" class="form-control" />
+            </div>
+            <div class="form-group">
+              <label for="email">Senha:</label>
+              <input type="password" id="pass" class="form-control" />
+            </div>
+            <button type="submit" class="btn btn-primary w-50 m-3">
+              Acessar
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
