@@ -11,6 +11,7 @@
 - Docker
 - Docker Compose
 - Postgres
+- Sequelize
 
 ## Como configurar
 Antes de executar a aplicação, certifique-se de possui o Docker e o Docker Compose instalados em sua máquina.
@@ -19,16 +20,16 @@ Antes de executar a aplicação, certifique-se de possui o Docker e o Docker Com
 ```
 docker-compose up
 ```
- - Acesse o PgAdmin4 e crie uma tabela denominada "web3"
+ - Acesse o PgAdmin4 (127.0.0.1:3002), com as credenciais admin@mail.com, e admin e crie uma tabela denominada "web3"
  - No terminal, execute:
 ```
-npm run init
+npm run migration:run
 ```
  - Por último execute:
 ```
 npm run dev
 ```
-Após isso basta acessar a URL local, porta 3000
+Após isso basta acessar a 127.0.0.1:3001
 
 ## Desenvolvido por
 [Bruno Casas](https://github.com/Bruno-Casas)

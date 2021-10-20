@@ -44,7 +44,7 @@ fetch("/api/images").then(async function (data) {
               </span>
           </div>
             <div class="row d-flex align-items-center justify-content-between mt-4 more-information display-none">
-              <div class="col-6">
+              <div class="col-7">
                 <p>
                   <strong>Localidade: </strong>
                   ${registers[key].collaborator.city}/${registers[key].collaborator.state}
@@ -63,7 +63,7 @@ fetch("/api/images").then(async function (data) {
                 </p>
               </div>
               ${registers[key].collaborator.Responsible.name !== null ? `
-                <div class="col-6">
+                <div class="col-5 ">
                   <h4 class="h4">Dados do responsável</h4>
 
                   <p>
