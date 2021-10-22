@@ -83,3 +83,9 @@ footer ion-icon {
 .display-none{
   display: none !important;
 }
+
+.authorization-term{
+  font-size: 18 px;
+  line-height: 1.2;
+  width: 80%;
+}
