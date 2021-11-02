@@ -4,24 +4,6 @@
   color: #F56B39; 
 }
 
-.title-bar {
-  min-width: 150px;
-  min-height: 5px;
-  max-width: 150px;
-  max-height: 5px;
-  background-color: var(--primary);
-}
-
-.title {
-  font-family: Lato !important;
-  font-style: normal;
-  font-weight: 800;
-  font-size: 40px;
-  line-height: 48px;
-  /* text-align: center; */
-  color: var(--gray-dark);
-}
-
 .photo-album {
   border: 2px solid var(--primary);
   box-sizing: border-box;
