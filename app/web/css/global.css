@@ -143,8 +143,8 @@ footer ion-icon {
 }
 
 .equip-card img {
-  width: 12rem;
-  height: 12rem;
+  width: 10rem;
+  height: 10rem;
   border-radius: 12rem;
 }
 
@@ -152,14 +152,14 @@ footer ion-icon {
   color: var(--third);
   font-style: normal;
   font-weight: bold;
-  font-size: 32px;
+  font-size: 26px;
   line-height: 38px;
 }
 
 .equip-card p {
   font-style: normal;
   font-weight: normal;
-  font-size: 16px;
+  font-size: 14px;
   line-height: 19px;
 }
 
