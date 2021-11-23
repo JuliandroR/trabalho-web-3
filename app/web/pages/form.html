@@ -77,7 +77,7 @@
         <div class="title-bar mb-2"></div>
 
         <p class="text-center h5 mt-3">
-          Contribua você também com o projeto. 
+          Contribua você também com o projeto.
           <br />
           Envie sua foto, bem como as demais informações pelo formulário abaixo
         </p>
@@ -97,7 +97,13 @@
           </div>
           <div class="form-group">
             <label for="bornDate">Data de nascimento:</label>
-            <input type="date" id="bornDate" name="born_date" class="form-control" required/>
+            <input
+              type="date"
+              id="bornDate"
+              name="born_date"
+              class="form-control"
+              required
+            />
           </div>
           <div class="form-group">
             <label for="cpf">CPF:</label>
@@ -337,9 +343,16 @@ A UFMS e o IFMS reservam para si, desde já, o direito incontestável de reprodu
             >
           </div>
           <div class="form-check">
-            <input class="form-check-input" type="checkbox" value="" id="accept-terms" required>
+            <input
+              class="form-check-input"
+              type="checkbox"
+              value=""
+              id="accept-terms"
+              required
+            />
             <label class="form-check-label" for="accept-terms">
-              Li o <a href="/authorization.html">termo de uso</a> e autorizo o uso da minha imagem
+              Li o <a href="/authorization.html">termo de uso</a> e autorizo o
+              uso da minha imagem
             </label>
           </div>
           <button type="submit" class="btn btn-primary">
@@ -358,75 +371,123 @@ A UFMS e o IFMS reservam para si, desde já, o direito incontestável de reprodu
       <strong>Desenvolvido por Bruno Casas e Juliando Rocha</strong>
     </footer>
 
-      <!-- Modal -->
-      <div
-        class="modal fade"
-        id="successSendModal"
-        tabindex="-1"
-        aria-labelledby="successSendModal"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div class="modal-body">
-              <div class="success-animation">
-                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"><circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" /><path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" /></svg>
-                </div>
-              <h3 class="h3 text-center">Sucesso!</h3>
-              <p class="text-center">
-                A sua contribuição foi enviada com sucesso
-              </p>
-            </div>
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="successSendModal"
+      tabindex="-1"
+      aria-labelledby="successSendModal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
           </div>
-        </div>
-      </div>
-
-      <div
-        class="modal fade"
-        id="failureSendModal"
-        tabindex="-1"
-        aria-labelledby="failureSendModal"
-        aria-hidden="true"
-      >
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
+          <div class="modal-body">
+            <div class="success-animation">
+              <svg
+                class="checkmark"
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 52 52"
+              >
+                <circle
+                  class="checkmark__circle"
+                  cx="26"
+                  cy="26"
+                  r="25"
+                  fill="none"
+                />
+                <path
+                  class="checkmark__check"
+                  fill="none"
+                  d="M14.1 27.2l7.1 7.2 16.7-16.8"
+                />
+              </svg>
             </div>
-            <div class="modal-body">
-              
-<div class="tick-animation-ctn">
-  <div class="icon icon--order-success svg">
-        <svg xmlns="http://www.w3.org/2000/svg" width="154px" height="154px">  
-          <g fill="none" stroke="#f15a24" stroke-width="2"> 
-            <circle cx="77" cy="77" r="72" style="stroke-dasharray:480px, 480px; stroke-dashoffset: 960px;"></circle>
-            <circle id="colored" fill="#f15a24" cx="77" cy="77" r="72" style="stroke-dasharray:480px, 480px; stroke-dashoffset: 960px;"></circle>
-            <polyline class="st0" stroke="#fff" stroke-width="8" points="40,77.8 114,77.8 " style="stroke-dasharray:100px, 100px; stroke-dashoffset: 200px;"/>   
-          </g> 
-        </svg>
-      </div>
-</div>
-              <h3 class="h3 text-center">OPS!</h3>
-              <p class="text-center">
-                Ocorreu um erro e sua contribuição não pode ser enviada, tente novamente
-              </p>
-            </div>
+            <h3 class="h3 text-center">Sucesso!</h3>
+            <p class="text-center">
+              A sua contribuição foi enviada com sucesso
+            </p>
           </div>
         </div>
       </div>
     </div>
+
+    <div
+      class="modal fade"
+      id="failureSendModal"
+      tabindex="-1"
+      aria-labelledby="failureSendModal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="tick-animation-ctn">
+              <div class="icon icon--order-success svg">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="154px"
+                  height="154px"
+                >
+                  <g fill="none" stroke="#f15a24" stroke-width="2">
+                    <circle
+                      cx="77"
+                      cy="77"
+                      r="72"
+                      style="
+                        stroke-dasharray: 480px, 480px;
+                        stroke-dashoffset: 960px;
+                      "
+                    ></circle>
+                    <circle
+                      id="colored"
+                      fill="#f15a24"
+                      cx="77"
+                      cy="77"
+                      r="72"
+                      style="
+                        stroke-dasharray: 480px, 480px;
+                        stroke-dashoffset: 960px;
+                      "
+                    ></circle>
+                    <polyline
+                      class="st0"
+                      stroke="#fff"
+                      stroke-width="8"
+                      points="40,77.8 114,77.8 "
+                      style="
+                        stroke-dasharray: 100px, 100px;
+                        stroke-dashoffset: 200px;
+                      "
+                    />
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <h3 class="h3 text-center">OPS!</h3>
+            <p class="text-center">
+              Ocorreu um erro e sua contribuição não pode ser enviada, tente
+              novamente
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- </div> -->
   </body>
 </html>
