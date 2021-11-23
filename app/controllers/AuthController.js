@@ -1,4 +1,4 @@
-import { Collaborator } from "../models"
+import { User } from "../models"
 import { HttpError } from '../errors' 
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcrypt'
@@ -11,7 +11,7 @@ export async function autenticate(req, res, next) {
     const { email, password } = req.body
 
     try {
-        const user = await Collaborator.findOne({
+        const user = await User.findOne({
             where: { email }
         })
 

@@ -116,3 +116,26 @@ export const Responsible = sequelize.define(
       updatedAt: false
   }
 )
+
+export const User = sequelize.define(
+  'User',
+  {
+      id: {
+          type: INTEGER,
+          autoIncrement: true,
+          allowNull: false,
+          primaryKey: true
+      },
+      name: STRING(128),
+      email: STRING(256),
+      password: Sequelize.STRING(72),
+      createdAt: {
+          field: 'created_at',
+          type: DATE,
+      }
+  },
+  {
+      tableName: 'user',
+      updatedAt: false
+  }
+)
