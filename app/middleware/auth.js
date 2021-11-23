@@ -1,12 +1,26 @@
+import jwt from 'jsonwebtoken'
+import { HttpError } from '../errors'
+
 export async function protect(req, res, next) {
-  const token = req.headers['x-access-token'];
-  if (!token) return res.status(401).json({ auth: false, message: 'No token provided.' });
+  try {
+    const header = req.headers['authorization']
 
-  jwt.verify(token, process.env.SECRET, function (err, decoded) {
-    if (err) return res.status(500).json({ auth: false, message: 'Failed to authenticate token.' });
+    if (!header)
+      throw new HttpError(401, 'O header Authorization não foi informado.');
 
-    // se tudo estiver ok, salva no request para uso posterior
-    req.userId = decoded.id;
-    next();
-  });
+    const token = header.split(' ')[1];
+
+    if (!token)
+      throw new HttpError(401, 'O token de acesso não foi informado.');
+
+    jwt.verify(token, 'process.env.SECRET', (err, decoded) => {
+      if (err)
+        new HttpError(401, 'Falha ao autenticar token de acesso.');
+        
+      req.userId = decoded.id;
+      next();
+    });
+  } catch (e) {
+    next(e)
+  }
 }

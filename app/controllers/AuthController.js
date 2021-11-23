@@ -1,5 +1,5 @@
 import { User } from "../models"
-import { HttpError } from '../errors' 
+import { HttpError } from '../errors'
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcrypt'
 import { makeResponse } from '../utils'
@@ -40,9 +40,9 @@ export async function autenticate(req, res, next) {
         }
 
         return res.json(makeResponse(result));
-    }catch(e) {
+    } catch (e) {
         next(e)
-    }  
+    }
 }
 
 // app.post('/logout', function (req, res) {

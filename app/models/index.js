@@ -54,7 +54,6 @@ export const Collaborator = sequelize.define(
     phone: STRING(15),
     state: STRING(64),
     city: STRING(128),
-    password: STRING(72),
     bornDate: {
       field: 'born_date',
       type: DATE

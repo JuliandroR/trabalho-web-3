@@ -4,6 +4,7 @@ import { getImages, processData } from '../controllers/AlbumController';
 import { mkdirSync } from 'fs'
 import { addUser } from '../controllers/UserController'
 import { autenticate } from '../controllers/AuthController'
+import { protect } from '../middleware/auth'
 
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
@@ -23,6 +24,6 @@ const router = Router();
 router.post('/user', addUser)
 router.post('/auth', autenticate)
 router.post('/form', upload.single('photo'), processData)
-router.get('/images', getImages)
+router.get('/images', protect, getImages)
 
 export default router;
