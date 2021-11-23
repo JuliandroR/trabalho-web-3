@@ -8,15 +8,16 @@ function processDataFromForm(submitEvent) {
   submitEvent.preventDefault();
   form = submitEvent.target;
 
-  console.log(submitEvent.target);
   const data = new FormData(submitEvent.target);
+  const value = Object.fromEntries(data.entries());
 
-  fetch("/user", {
+  fetch("/api/user", {
     method: "POST",
     headers: {
-      Accept: "application/json",
+      'Accept': "application/json",
+      'Content-Type': 'application/json'
     },
-    body: data,
+    body: JSON.stringify(value),
   }).then((resp) => resp.json().then(treatReturn));
 }
 
