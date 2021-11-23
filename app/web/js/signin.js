@@ -25,7 +25,7 @@ function treatReturn(response) {
   let modal;
 
   if (!response.error)
-    modal = new bootsrap.Modal(document.getElementById("successSendModal"));
+    modal = new bootstrap.Modal(document.getElementById("successSendModal"));
   else modal = new bootstrap.Modal(document.getElementById("failureSendModal"));
 
   modal.show();
