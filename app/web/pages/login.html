@@ -28,10 +28,12 @@
     <link rel="stylesheet" href="../css/form.css" />
     <link rel="stylesheet" href="../css/animations.css" />
     <link rel="stylesheet" href="../css/global.css" />
+
+    <script src="../js/login.js"></script>
     <title>Login - Negritude em Debate</title>
   </head>
   <body>
-    <div class="container-md w-100 h-100 d-flex mt-5">
+    <div class="container-md w-100 h-100 d-flex mt-5 flex-column">
       <div class="row d-flex align-items-center card-login w-75 m-auto">
         <div class="col-md-5 p-0 m-0">
           <img src="../img/login.png" class="w-100 p-0 m-0" alt="" />
@@ -55,17 +57,99 @@
 
           <form id="form" class="row w-75" action="">
             <div class="form-group">
-              <label for="email">Usuário:</label>
-              <input type="text" id="user" class="form-control" />
+              <label for="email">E-mail:</label>
+              <input type="text" id="email" name="email" class="form-control" />
             </div>
             <div class="form-group">
-              <label for="email">Senha:</label>
-              <input type="password" id="pass" class="form-control" />
+              <label for="password">Senha:</label>
+              <input type="password" id="password" name="password" class="form-control" />
             </div>
             <button type="submit" class="btn btn-primary w-50 m-3">
               Acessar
             </button>
           </form>
+          <p style="font-size: 14px;">Ainda não possui acesso? <a href="/signin.html">Clique aqui</a> e crie</p>
+        </div>
+      </div>
+      <div
+        class="
+          row
+          justify-content-center
+          align-content-center align-items-center
+        "
+      >
+        <a href="/" class="btn btn-link">Voltar para o início</a>
+      </div>
+    </div>
+
+    <div class="modal fade" id="failureSendMo-dal" tabindex="-1" aria-labelledby="failureSendModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="tick-animation-ctn">
+              <div class="icon icon--order-success svg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="154px" height="154px">
+                  <g fill="none" stroke="#f15a24" stroke-width="2">
+                    <circle cx="77" cy="77" r="72" style="
+                        stroke-dasharray: 480px, 480px;
+                        stroke-dashoffset: 960px;
+                      "></circle>
+                    <circle id="colored" fill="#f15a24" cx="77" cy="77" r="72" style="
+                        stroke-dasharray: 480px, 480px;
+                        stroke-dashoffset: 960px;
+                      "></circle>
+                    <polyline class="st0" stroke="#fff" stroke-width="8" points="40,77.8 114,77.8 " style="
+                        stroke-dasharray: 100px, 100px;
+                        stroke-dashoffset: 200px;
+                      " />
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <h3 class="h3 text-center">OPS!</h3>
+            <p class="text-center">
+              Ocorreu um erro ao tentar acessar o sistema, por favor tente novamente
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="failurePassModal" tabindex="-1" aria-labelledby="failurePassModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="tick-animation-ctn">
+              <div class="icon icon--order-success svg">
+                <svg xmlns="http://www.w3.org/2000/svg" width="154px" height="154px">
+                  <g fill="none" stroke="#f15a24" stroke-width="2">
+                    <circle cx="77" cy="77" r="72" style="
+                        stroke-dasharray: 480px, 480px;
+                        stroke-dashoffset: 960px;
+                      "></circle>
+                    <circle id="colored" fill="#f15a24" cx="77" cy="77" r="72" style="
+                        stroke-dasharray: 480px, 480px;
+                        stroke-dashoffset: 960px;
+                      "></circle>
+                    <polyline class="st0" stroke="#fff" stroke-width="8" points="40,77.8 114,77.8 " style="
+                        stroke-dasharray: 100px, 100px;
+                        stroke-dashoffset: 200px;
+                      " />
+                  </g>
+                </svg>
+              </div>
+            </div>
+            <h3 class="h3 text-center">OPS!</h3>
+            <p class="text-center">
+              O e-mail ou senha informado estão incorretos, revise os dados e tente novamente!
+            </p>
+          </div>
         </div>
       </div>
     </div>

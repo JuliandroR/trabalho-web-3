@@ -1,14 +1,24 @@
-fetch("/api/images").then(async function (data) {
-  await data.json().then(async (dataImages) => {
-    let registers = await dataImages;
+// fetch("/api/images").then(async function (data) {
+//   await data.json().then(async (dataImages) => {});
+// });
 
-    for (const key in registers) {
-      let date = new Date(registers[key].collaborator.bornDate)
+fetch("/api/images", {
+  method: "GET",
+  headers: {
+    authorization: "Bearer " + localStorage.token
+  },
+}).then((resp) => resp.json().then(createCards));
 
-      let div = document.createElement("div");
-      div.classList.add("col-sm-5", "m-3");
-      div.id = key;
-      div.innerHTML = `
+function createCards(data) {
+  let registers = data;
+
+  for (const key in registers) {
+    let date = new Date(registers[key].collaborator.bornDate);
+
+    let div = document.createElement("div");
+    div.classList.add("col-sm-5", "m-3");
+    div.id = key;
+    div.innerHTML = `
         <div class="card-photo row d-flex align-items-center justify-content-between">
           <div class="col-5 m-0 p-0">
             <img
@@ -47,7 +57,9 @@ fetch("/api/images").then(async function (data) {
               <div class="col-7">
                 <p>
                   <strong>Localidade: </strong>
-                  ${registers[key].collaborator.city}/${registers[key].collaborator.state}
+                  ${registers[key].collaborator.city}/${
+      registers[key].collaborator.state
+    }
                 </p>
                 <p>
                   <strong>E-mail: </strong>
@@ -62,7 +74,9 @@ fetch("/api/images").then(async function (data) {
                   ${registers[key].collaborator.cpf}
                 </p>
               </div>
-              ${registers[key].collaborator.Responsible.name !== null ? `
+              ${
+                registers[key].collaborator.Responsible.name !== null
+                  ? `
                 <div class="col-5 ">
                   <h4 class="h4">Dados do responsável</h4>
 
@@ -76,16 +90,16 @@ fetch("/api/images").then(async function (data) {
                     ${registers[key].collaborator.Responsible.cpf}
                   </p>
                 </div>
-              ` : ""}
+              `
+                  : ""
+              }
             </div>
         </div>
         `;
 
-      document.getElementById("register_container").appendChild(div);
-    }
-    
-  });
-});
+    document.getElementById("register_container").appendChild(div);
+  }
+}
 
 function viewMore(id, status) {
   let containers = document.getElementsByClassName("more-information");
