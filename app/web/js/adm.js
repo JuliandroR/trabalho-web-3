@@ -1,11 +1,16 @@
-// fetch("/api/images").then(async function (data) {
-//   await data.json().then(async (dataImages) => {});
-// });
+window.onload = function() {
+  document.getElementById("logout").addEventListener("click", function () {
+    if (confirm("Tem certeza que deseja sair?")) {
+      localStorage.setItem("token", null);
+      window.location.href = "/login.html";
+    }
+  });
+}
 
 fetch("/api/images", {
   method: "GET",
   headers: {
-    authorization: "Bearer " + localStorage.token
+    authorization: "Bearer " + localStorage.token,
   },
 }).then((resp) => resp.json().then(createCards));
 
