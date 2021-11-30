@@ -222,3 +222,7 @@ footer ion-icon {
   font-size: 14px;
   line-height: 1.25;
 }
+
+.nav-link.active {
+  color: #F56B39;
+}

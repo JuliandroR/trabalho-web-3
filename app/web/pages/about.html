@@ -29,42 +29,45 @@
     ></script>
 
     <link rel="stylesheet" href="./css/animations.css" />
-    <link rel="stylesheet" href="./css/global.css" />
-    <link rel="stylesheet" href="./css/about.css" />
+    <link rel="stylesheet" href="../css/about.css" />
+    <link rel="stylesheet" href="../css/global.css" />
   </head>
 
   <body>
-    <header
-      class="navbar navbar-expand-lg navbar-light bg-light p-3 ps-5 shadow"
-    >
+    <header class="navbar navbar-expand-lg navbar-light bg-light p-3 ps-5 shadow">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/"
-          ><strong>NEGRITUDE EM DEBATE</strong></a
-        >
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarText"
-          aria-controls="navbarText"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
+        <a class="navbar-brand" href="/"><strong>NEGRITUDE EM DEBATE</strong></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+          aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <nav class="collapse navbar-collapse" id="navbarText">
           <ul class="navbar-nav ms-auto">
             <li class="nav-item ms-4">
-              <a class="nav-link" href="/#equip">Equipe</a>
+              <a class="nav-link" href="/">Início</a>
             </li>
-            <li class="nav-item ms-4">
-              <a class="nav-link" href="/#locations">Locais Visitados</a>
+            <li class="nav-item dropdown ms-4">
+              <a class="nav-link dropdown-toggle active" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+                aria-expanded="false">
+                Sobre o projeto
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li><a class="dropdown-item" href="/about.html#historia">História</a></li>
+                <li><a class="dropdown-item" href="/about.html#equipe">Conheça a equipe</a></li>
+                <li>
+                  <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="/#actions">Conheça as ações do projeto</a></li>
+              </ul>
             </li>
+  
             <li class="nav-item ms-4">
               <a class="nav-link" href="./form.html">Álbum Digital</a>
             </li>
             <li class="nav-item ms-4">
-              <a class="nav-link" href="/login.html">Área Administrativa</a>
+              <a class="nav-link" href="./login.html" title="Acessar ambiente administrativo">
+                <ion-icon name="person-circle-outline" style="color: #f56b39; font-size: 28px;"></ion-icon>
+              </a>
             </li>
           </ul>
         </nav>
@@ -72,7 +75,7 @@
     </header>
     <main>
       <div class="container container-md container-lg d-flex flex-column">
-        <div class="row d-flex flex-row align-items-center">
+        <div class="row d-flex flex-row align-items-center" id="historia">
           <div class="col-md-8">
             <div class="row d-flex justify-content-start mt-5">
               <h1 class="h2 text-left title">Sobre o projeto</h1>
