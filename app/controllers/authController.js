@@ -5,7 +5,6 @@ import bcrypt from "bcrypt";
 import { makeResponse } from "../utils";
 
 const tokenValidity = 86400;
-const saltRounds = 10;
 
 export async function autenticate(req, res, next) {
   const { email, password } = req.body;
@@ -23,7 +22,7 @@ export async function autenticate(req, res, next) {
       throw new HttpError(401, "Usuário ou senha incorretos");
     }
 
-    const token = jwt.sign({ userId: user.id }, "process.env.SECRET", {
+    const token = jwt.sign({ userId: user.id }, process.env.SECRET || 'default', {
       expiresIn: tokenValidity,
     });
 
@@ -31,9 +30,10 @@ export async function autenticate(req, res, next) {
       throw new HttpError(500, "Erro desconhecido ao gerar o token de acesso");
     }
 
+    const { exp } = jwt.decode(token);
     const result = {
       token,
-      expires_in: tokenValidity,
+      valid_until: exp,
     };
 
     return res.json(makeResponse(result));
