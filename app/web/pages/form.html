@@ -1,339 +1,260 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Negritude em debate - Álbum digital</title>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
-      crossorigin="anonymous"
-    />
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
-      crossorigin="anonymous"
-    ></script>
+  <title>Negritude em debate - Álbum digital</title>
 
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
-    ></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
 
-    <link rel="stylesheet" href="../css/form.css" />
-    <link rel="stylesheet" href="../css/animations.css" />
-    <link rel="stylesheet" href="../css/global.css" />
-    <script defer src="../js/form.js"></script>
-  </head>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-  <body>
-    <header class="navbar navbar-expand-lg navbar-light bg-light p-3 ps-5 shadow">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="/"><strong>NEGRITUDE EM DEBATE</strong></a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
-          aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <nav class="collapse navbar-collapse" id="navbarText">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item ms-4">
-              <a class="nav-link" href="/">Início</a>
-            </li>
-            <li class="nav-item dropdown ms-4">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
-                aria-expanded="false">
-                Sobre o projeto
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <li><a class="dropdown-item" href="/about.html#historia">História</a></li>
-                <li><a class="dropdown-item" href="/about.html#equipe">Conheça a equipe</a></li>
-                <li>
-                  <hr class="dropdown-divider">
-                </li>
-                <li><a class="dropdown-item" href="/#actions">Conheça as ações do projeto</a></li>
-              </ul>
-            </li>
-  
-            <li class="nav-item ms-4">
-              <a class="nav-link active" href="./form.html">Álbum Digital</a>
-            </li>
-            <li class="nav-item ms-4">
-              <a class="nav-link" href="./login.html" title="Acessar ambiente administrativo">
-                <ion-icon name="person-circle-outline" style="color: #f56b39; font-size: 28px;"></ion-icon>
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </header>
-    <main class="container container-md container-lg mt-5">
-      <div class="row d-flex justify-content-center">
-        <h1 class="h2 text-center title">Álbum digital</h1>
-        <div class="title-bar mb-2"></div>
+  <link rel="stylesheet" href="../css/form.css" />
+  <link rel="stylesheet" href="../css/animations.css" />
+  <link rel="stylesheet" href="../css/global.css" />
+  <script defer src="../js/form.js"></script>
+</head>
 
-        <p class="text-center h5 mt-3">
-          Contribua você também com o projeto.
-          <br />
-          Envie sua foto, bem como as demais informações pelo formulário abaixo
-        </p>
-      </div>
-      <form id="form" class="row" action="">
-        <div class="col-md-6 p-5 p-sm-3 px-lg-4" id="firstPart">
-          <div class="form-group">
-            <label for="name">Nome:</label>
-            <input
-              type="text"
-              class="form-control"
-              id="iname"
-              name="name"
-              placeholder="Ex.: João da silva"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <label for="bornDate">Data de nascimento:</label>
-            <input
-              type="date"
-              id="bornDate"
-              name="born_date"
-              class="form-control"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <label for="cpf">CPF:</label>
-            <input
-              type="text"
-              class="form-control"
-              id="cpf"
-              name="cpf"
-              placeholder="Ex.: 123.123.123-12"
-              oninput="applyMask(this, 'cpf')"
-            />
-          </div>
-          <div class="form-group">
-            <label for="email">E-mail:</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              class="form-control"
-              placeholder="Ex.: seuemail@dominio.com"
-              required
-            />
-          </div>
-          <div class="form-group">
-            <label for="phone">Telefone/Whatsapp:</label>
-            <input
-              id="phone"
-              class="form-control"
-              type="tel"
-              name="phone"
-              placeholder="Ex.: (67) 9 9999-9999"
-              oninput="applyMask(this, 'phone')"
-              required
-            />
-          </div>
-          <div class="row d-flex justify-content-between">
-            <div class="form-group col-sm-3">
-              <label for="state">Estado:</label>
-              <select class="form-control" id="state" name="state" required>
-                <option></option>
-                <option>MS</option>
-              </select>
-            </div>
-            <div class="form-group col-sm-9">
-              <label for="state">Cidade:</label>
-              <select class="form-control" id="city" name="city" required>
-                <option></option>
-                <option>Água Clara</option>
-                <option>Alcinópolis</option>
-                <option>Amambai</option>
-                <option>Anastácio</option>
-                <option>Anaurilândia</option>
-                <option>Angélica</option>
-                <option>Antônio João</option>
-                <option>Aparecida do Taboado</option>
-                <option>Aquidauana</option>
-                <option>Aral Moreira</option>
-                <option>Bandeirantes</option>
-                <option>Bataguassu</option>
-                <option>Batayporã</option>
-                <option>Bela Vista</option>
-                <option>Bodoquena</option>
-                <option>Bonito</option>
-                <option>Brasilândia</option>
-                <option>Caarapó</option>
-                <option>Camapuã</option>
-                <option>Campo Grande</option>
-                <option>Caracol</option>
-                <option>Cassilândia</option>
-                <option>Chapadão do Sul</option>
-                <option>Corguinho</option>
-                <option>Coronel Sapucaia</option>
-                <option>Corumbá</option>
-                <option>Costa Rica</option>
-                <option>Coxim</option>
-                <option>Deodápolis</option>
-                <option>Dois Irmãos do Buriti</option>
-                <option>Douradina</option>
-                <option>Dourados</option>
-                <option>Eldorado</option>
-                <option>Fátima do Sul</option>
-                <option>Figueirão</option>
-                <option>Glória de Dourados</option>
-                <option>Guia Lopes da Laguna</option>
-                <option>Iguatemi</option>
-                <option>Inocência</option>
-                <option>Itaporã</option>
-                <option>Itaquiraí</option>
-                <option>Ivinhema</option>
-                <option>Japorã</option>
-                <option>Jaraguari</option>
-                <option>Jardim</option>
-                <option>Jateí</option>
-                <option>Juti</option>
-                <option>Ladário</option>
-                <option>Laguna Carapã</option>
-                <option>Maracaju</option>
-                <option>Miranda</option>
-                <option>Mundo Novo</option>
-                <option>Naviraí</option>
-                <option>Nioaque</option>
-                <option>Nova Alvorada do Sul</option>
-                <option>Nova Andradina</option>
-                <option>Novo Horizonte do Sul</option>
-                <option>Paraíso das Águas</option>
-                <option>Paranaíba</option>
-                <option>Paranhos</option>
-                <option>Pedro Gomes</option>
-                <option>Ponta Porã</option>
-                <option>Porto Murtinho</option>
-                <option>Ribas do Rio Pardo</option>
-                <option>Rio Brilhante</option>
-                <option>Rio Negro</option>
-                <option>Rio Verde</option>
-                <option>Rochedo</option>
-                <option>Santa Rita do Pardo</option>
-                <option>São Gabriel do Oeste</option>
-                <option>Selvíria</option>
-                <option>Sete Quedas</option>
-                <option>Sidrolândia</option>
-                <option>Sonora</option>
-                <option>Tacuru</option>
-                <option>Taquarussu</option>
-                <option>Terenos</option>
-                <option>Três Lagoas</option>
-                <option>Vicentina</option>
-              </select>
-            </div>
-          </div>
-          <div class="row" id="info-responsavel">
-            <div class="col-sm-12">
-              <h3 class="h3 text-center">Dados do responsável</h3>
-              <div class="form-group">
-                <label for="nameResponsavel">Nome do responsável:</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="nameResponsavel"
-                  name="resp_name"
-                  placeholder="Ex.: João da silva"
-                />
-              </div>
-              <div class="form-group">
-                <label for="cpfResponsavel">CPF do Responsável:</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  id="cpfResponsavel"
-                  name="resp_cpf"
-                  placeholder="Ex.: 123.123.123-12"
-                  oninput="applyMask(this, 'cpf')"
-                />
-              </div>
-            </div>
-          </div>
-          <button type="button" id="next-button" class="btn btn-primary">
-            Próximo
-          </button>
+<body>
+  <header class="navbar navbar-expand-lg navbar-light bg-light p-3 ps-5 shadow">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/"><strong>NEGRITUDE EM DEBATE</strong></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText"
+        aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <nav class="collapse navbar-collapse" id="navbarText">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item ms-4">
+            <a class="nav-link" href="/">Início</a>
+          </li>
+          <li class="nav-item dropdown ms-4">
+            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              Sobre o projeto
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <li><a class="dropdown-item" href="/about.html#historia">História</a></li>
+              <li><a class="dropdown-item" href="/about.html#equipe">Conheça a equipe</a></li>
+              <li>
+                <hr class="dropdown-divider">
+              </li>
+              <li><a class="dropdown-item" href="/#actions">Conheça as ações do projeto</a></li>
+            </ul>
+          </li>
+
+          <li class="nav-item ms-4">
+            <a class="nav-link active" href="./form.html">Álbum Digital</a>
+          </li>
+          <li class="nav-item ms-4">
+            <a class="nav-link" href="./login.html" title="Acessar ambiente administrativo">
+              <ion-icon name="person-circle-outline" style="color: #f56b39; font-size: 28px;"></ion-icon>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main class="container container-md container-lg mt-5">
+    <div class="row d-flex justify-content-center">
+      <h1 class="h2 text-center title">Álbum digital</h1>
+      <div class="title-bar mb-2"></div>
+
+      <p class="text-center h5 mt-3">
+        Contribua você também com o projeto.
+        <br />
+        Envie sua foto, bem como as demais informações pelo formulário abaixo
+      </p>
+    </div>
+    <form id="form" class="row" action="">
+      <div class="col-md-6 p-5 p-sm-3 px-lg-4" id="firstPart">
+        <div class="form-group">
+          <label for="name">Nome:</label>
+          <input type="text" class="form-control" id="iname" name="name" placeholder="Ex.: João da silva" required />
         </div>
-        <div class="col-md-6 p-5 p-sm-3 mt-5 mt-md-0 px-lg-4" id="secondPart">
-          <div class="row justify-content-center">
-            <div
-              class="
+        <div class="form-group">
+          <label for="bornDate">Data de nascimento:</label>
+          <input type="date" id="bornDate" name="born_date" class="form-control" required />
+        </div>
+        <div class="form-group">
+          <label for="cpf">CPF:</label>
+          <input type="text" class="form-control" id="cpf" name="cpf" placeholder="Ex.: 123.123.123-12"
+            oninput="applyMask(this, 'cpf')" />
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail:</label>
+          <input type="email" id="email" name="email" class="form-control" placeholder="Ex.: seuemail@dominio.com"
+            required />
+        </div>
+        <div class="form-group">
+          <label for="phone">Telefone/Whatsapp:</label>
+          <input id="phone" class="form-control" type="tel" name="phone" placeholder="Ex.: (67) 9 9999-9999"
+            oninput="applyMask(this, 'phone')" required />
+        </div>
+        <div class="row d-flex justify-content-between">
+          <div class="form-group col-sm-3">
+            <label for="state">Estado:</label>
+            <select class="form-control" id="state" name="state" required>
+              <option></option>
+              <option>MS</option>
+            </select>
+          </div>
+          <div class="form-group col-sm-9">
+            <label for="state">Cidade:</label>
+            <select class="form-control" id="city" name="city" required>
+              <option></option>
+              <option>Água Clara</option>
+              <option>Alcinópolis</option>
+              <option>Amambai</option>
+              <option>Anastácio</option>
+              <option>Anaurilândia</option>
+              <option>Angélica</option>
+              <option>Antônio João</option>
+              <option>Aparecida do Taboado</option>
+              <option>Aquidauana</option>
+              <option>Aral Moreira</option>
+              <option>Bandeirantes</option>
+              <option>Bataguassu</option>
+              <option>Batayporã</option>
+              <option>Bela Vista</option>
+              <option>Bodoquena</option>
+              <option>Bonito</option>
+              <option>Brasilândia</option>
+              <option>Caarapó</option>
+              <option>Camapuã</option>
+              <option>Campo Grande</option>
+              <option>Caracol</option>
+              <option>Cassilândia</option>
+              <option>Chapadão do Sul</option>
+              <option>Corguinho</option>
+              <option>Coronel Sapucaia</option>
+              <option>Corumbá</option>
+              <option>Costa Rica</option>
+              <option>Coxim</option>
+              <option>Deodápolis</option>
+              <option>Dois Irmãos do Buriti</option>
+              <option>Douradina</option>
+              <option>Dourados</option>
+              <option>Eldorado</option>
+              <option>Fátima do Sul</option>
+              <option>Figueirão</option>
+              <option>Glória de Dourados</option>
+              <option>Guia Lopes da Laguna</option>
+              <option>Iguatemi</option>
+              <option>Inocência</option>
+              <option>Itaporã</option>
+              <option>Itaquiraí</option>
+              <option>Ivinhema</option>
+              <option>Japorã</option>
+              <option>Jaraguari</option>
+              <option>Jardim</option>
+              <option>Jateí</option>
+              <option>Juti</option>
+              <option>Ladário</option>
+              <option>Laguna Carapã</option>
+              <option>Maracaju</option>
+              <option>Miranda</option>
+              <option>Mundo Novo</option>
+              <option>Naviraí</option>
+              <option>Nioaque</option>
+              <option>Nova Alvorada do Sul</option>
+              <option>Nova Andradina</option>
+              <option>Novo Horizonte do Sul</option>
+              <option>Paraíso das Águas</option>
+              <option>Paranaíba</option>
+              <option>Paranhos</option>
+              <option>Pedro Gomes</option>
+              <option>Ponta Porã</option>
+              <option>Porto Murtinho</option>
+              <option>Ribas do Rio Pardo</option>
+              <option>Rio Brilhante</option>
+              <option>Rio Negro</option>
+              <option>Rio Verde</option>
+              <option>Rochedo</option>
+              <option>Santa Rita do Pardo</option>
+              <option>São Gabriel do Oeste</option>
+              <option>Selvíria</option>
+              <option>Sete Quedas</option>
+              <option>Sidrolândia</option>
+              <option>Sonora</option>
+              <option>Tacuru</option>
+              <option>Taquarussu</option>
+              <option>Terenos</option>
+              <option>Três Lagoas</option>
+              <option>Vicentina</option>
+            </select>
+          </div>
+        </div>
+        <div class="row" id="info-responsavel">
+          <div class="col-sm-12">
+            <h3 class="h3 text-center">Dados do responsável</h3>
+            <div class="form-group">
+              <label for="nameResponsavel">Nome do responsável:</label>
+              <input type="text" class="form-control" id="nameResponsavel" name="resp_name"
+                placeholder="Ex.: João da silva" />
+            </div>
+            <div class="form-group">
+              <label for="cpfResponsavel">CPF do Responsável:</label>
+              <input type="text" class="form-control" id="cpfResponsavel" name="resp_cpf"
+                placeholder="Ex.: 123.123.123-12" oninput="applyMask(this, 'cpf')" />
+            </div>
+          </div>
+        </div>
+        <button type="button" id="next-button" class="btn btn-primary">
+          Próximo
+        </button>
+      </div>
+      <div class="col-md-6 p-5 p-sm-3 mt-5 mt-md-0 px-lg-4" id="secondPart">
+        <div class="row justify-content-center">
+          <div class="
                 col-7 col-sm-8 col-lg-6 col-xl-4
                 d-flex
                 justify-content-center
                 flex-wrap
-              "
-            >
-              <img
-                src="https://images.pexels.com/photos/2825034/pexels-photo-2825034.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=300&w=200"
-                class="photo-album img-fluid"
-                alt=""
-                id="preview-image"
-              />
-              <div class="form-group">
-                <label for="photo" class="label-file">
-                  <button type="button" class="btn btn-link" disabled>
-                    📷 Escolha sua foto
-                  </button>
-                </label>
-                <input
-                  type="file"
-                  class="form-control-file"
-                  id="photo"
-                  name="photo"
-                  placeholder="Sua foto"
-                  required
-                  accept="image/*"
-                />
-              </div>
-            </div>
-            <div class="col-sm-8 col-md-12 col-xl-8">
-              <div class="form-group">
-                <label for="titlePhoto">Título da foto:</label>
-                <input
-                  type="text"
-                  id="titlePhoto"
-                  name="title_photo"
-                  class="form-control"
-                  placeholder="Ex.: Lindo sorriso"
-                  required
-                />
-              </div>
-              <div class="form-group">
-                <label for="authorPhoto">Nome do fotógrafo:</label>
-                <input
-                  type="text"
-                  id="titlePhoto"
-                  class="form-control"
-                  name="photographer"
-                  placeholder="Ex.: João da Silva"
-                  required
-                />
-              </div>
+              ">
+            <img
+              src="https://images.pexels.com/photos/2825034/pexels-photo-2825034.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=300&w=200"
+              class="photo-album img-fluid" alt="" id="preview-image" />
+            <div class="form-group">
+              <label for="photo" class="label-file">
+                <button type="button" class="btn btn-link" disabled>
+                  📷 Escolha sua foto
+                </button>
+              </label>
+              <input type="file" class="form-control-file" id="photo" name="photo" placeholder="Sua foto" required
+                accept="image/*" />
             </div>
           </div>
-          <div class="form-group">
-            <label for="objetivos">Objetivos:</label>
-            <textarea class="form-control" id="objetivos" rows="5" disabled>
+          <div class="col-sm-8 col-md-12 col-xl-8">
+            <div class="form-group">
+              <label for="titlePhoto">Título da foto:</label>
+              <input type="text" id="titlePhoto" name="title_photo" class="form-control"
+                placeholder="Ex.: Lindo sorriso" required />
+            </div>
+            <div class="form-group">
+              <label for="authorPhoto">Nome do fotógrafo:</label>
+              <input type="text" id="titlePhoto" class="form-control" name="photographer"
+                placeholder="Ex.: João da Silva" required />
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="objetivos">Objetivos:</label>
+          <textarea class="form-control" id="objetivos" rows="5" disabled>
 O projeto tem como objetivo visibilizar a beleza a cultura e a ancestralidade negra existentes no Mato Grosso do Sul, historicamente apagados e fora dos padrões estéticos eurocêntricos. Oportunizará assim, as discussões étnico-raciais capazes de qualificar e encorajar as professoras e professores a trabalharem com a problemática da população negra, em sala de aula, na tentativa de diminuir o arranjo da desigualdade existente no país. Para isso, a partir das fotografias selecionadas para a mostra fotográfica, irá se elaborar um álbum de fotografias que ao ser finalizado, será direcionado para escolas públicas, com a intenção de contribuir com o debate da Lei 10.639/03 que determina o ensino de História e Cultura Afro-brasileira nas escolas.
-                  </textarea
-            >
-          </div>
-          <div class="form-group">
-            <label for="regras">Regras:</label>
-            <textarea class="form-control" id="regras" rows="5" disabled>
+                  </textarea>
+        </div>
+        <div class="form-group">
+          <label for="regras">Regras:</label>
+          <textarea class="form-control" id="regras" rows="5" disabled>
 ✔️ Cada pessoa poderá participar com uma fotografia
 ✔️ A fotografia deve ser no formato digital JPG/JPEG
 ✔️ A fotografia poderá ser colorida ou preta e branco
@@ -342,155 +263,135 @@ O projeto tem como objetivo visibilizar a beleza a cultura e a ancestralidade ne
 ✔️ As fotografias serão selecionadas por um júri composto de pessoas pretas, que julgará a beleza negra a partir dos elementos que permitirão evidenciar as conexões com as raízes negras, com a ancestralidade negra, com a diáspora negra, com as pequenas Áfricas que existem em cada pessoa negra que vive em Mato Grosso do Sul
 ✔️ Toda fotografia deve ser encaminhada com a autorização de uso de imagem. 
 A UFMS e o IFMS reservam para si, desde já, o direito incontestável de reproduzir as fotografias inscritas em seu material institucional a qualquer momento e por tempo indeterminado, dando os devidos créditos ao fotógrafo.
-                  </textarea
-            >
-          </div>
-          <div class="form-check">
-            <input
-              class="form-check-input"
-              type="checkbox"
-              value=""
-              id="accept-terms"
-              required
-            />
-            <label class="form-check-label" for="accept-terms">
-              Li o <a href="/authorization.html">termo de uso</a> e autorizo o
-              uso da minha imagem
-            </label>
-          </div>
-          <button type="submit" class="btn btn-primary">
-            Enviar contribuição
-          </button>
+                  </textarea>
         </div>
-      </form>
-    </main>
-    <footer class="d-flex flex-column align-items-center pb-5">
-      <div class="d-inline-flex mb-4 mt-4">
-        <ion-icon class="display-5" name="logo-instagram"></ion-icon>
-        <ion-icon class="display-5 mx-4" name="logo-youtube"></ion-icon>
-        <ion-icon class="display-5" name="logo-facebook"></ion-icon>
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="accept-terms" required />
+          <label class="form-check-label" for="accept-terms">
+            Li o <a href="/authorization.html">termo de uso</a> e autorizo o
+            uso da minha imagem
+          </label>
+        </div>
+        <button type="submit" class="btn btn-primary">
+          Enviar contribuição
+        </button>
       </div>
+    </form>
+  </main>
+  <footer>
+    <div class="container container-md container-lg d-flex flex-column">
+      <div class="row justify-content-between align-items-center align-content-center">
+        <div class="col-md-2">
+          <img src="./img/LOGO NED.png" style="width: 15rem;">
+        </div>
 
-      <strong>Desenvolvido por Bruno Casas e Juliando Rocha</strong>
-    </footer>
-
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="successSendModal"
-      tabindex="-1"
-      aria-labelledby="successSendModal"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <div class="success-animation">
-              <svg
-                class="checkmark"
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 52 52"
-              >
-                <circle
-                  class="checkmark__circle"
-                  cx="26"
-                  cy="26"
-                  r="25"
-                  fill="none"
-                />
-                <path
-                  class="checkmark__check"
-                  fill="none"
-                  d="M14.1 27.2l7.1 7.2 16.7-16.8"
-                />
-              </svg>
+        <div class="col-md-8 justify-content-end d-flex flex-column align-items-center">
+          <h4 class=" h4 mb-4">Navegação</h4>
+          <div class="d-inline-flex">
+            <div class="d-flex flex-column mx-2">
+              <h5 class="h5">Página Inicial</h5>
+              <a href="/">Conheça o projeto</a>
+              <a href="/#actions">Ações do projeto</a>
+              <a href="/#equipe">Equipe</a>
+              <a href="/#contribuicao">Faça parte do projeto</a>
             </div>
-            <h3 class="h3 text-center">Sucesso!</h3>
-            <p class="text-center">
-              A sua contribuição foi enviada com sucesso
-            </p>
+            <div class="d-flex flex-column mx-2">
+              <h5 class="h5">Sobre o projeto</h5>
+              <a href="/about.html#about">História</a>
+              <a href="/about.html#video">Beleza negra resiste</a>
+              <a href="/about.html#equipe">Conheça nossa equipe</a>
+            </div>
+            <div class="d-flex flex-column mx-2">
+              <h5 class="h5">Faça parte do projeto</h5>
+              <a href="/form.html">Envie sua foto</a>
+            </div>
+            <div class="d-flex flex-column mx-2">
+              <h5 class="h5">Área privada</h5>
+              <a href="/login.html">Login</a>
+            </div>
           </div>
+        </div>
+
+        <div class="col-md-2 d-flex flex-column"">
+          <h4 class=" h4">Instituições</h4>
+          <img src="./img/instituicoes.png" style="width: 15rem;" alt="">
+
+          <h4 class="h4 mt-5">Redes Sociais</h4>
+          <div class="d-inline-flex">
+            <ion-icon class="display-5" name="logo-instagram" style="color: #f56b39; font-size: 28px;"></ion-icon>
+            <ion-icon class="display-5 mx-4" name="logo-youtube" style="color: #f56b39; font-size: 28px;"></ion-icon>
+            <ion-icon class="display-5" name="logo-facebook" style="color: #f56b39; font-size: 28px;"></ion-icon>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 justify-content-center align-items-center text-center">
+          <strong>Desenvolvido por Bruno de Almeida e Juliandro Rocha</strong>
         </div>
       </div>
     </div>
+  </footer>
 
-    <div
-      class="modal fade"
-      id="failureSendModal"
-      tabindex="-1"
-      aria-labelledby="failureSendModal"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
+  <!-- Modal -->
+  <div class="modal fade" id="successSendModal" tabindex="-1" aria-labelledby="successSendModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="success-animation">
+            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+              <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none" />
+              <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+            </svg>
           </div>
-          <div class="modal-body">
-            <div class="tick-animation-ctn">
-              <div class="icon icon--order-success svg">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="154px"
-                  height="154px"
-                >
-                  <g fill="none" stroke="#f15a24" stroke-width="2">
-                    <circle
-                      cx="77"
-                      cy="77"
-                      r="72"
-                      style="
+          <h3 class="h3 text-center">Sucesso!</h3>
+          <p class="text-center">
+            A sua contribuição foi enviada com sucesso
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="failureSendModal" tabindex="-1" aria-labelledby="failureSendModal" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="tick-animation-ctn">
+            <div class="icon icon--order-success svg">
+              <svg xmlns="http://www.w3.org/2000/svg" width="154px" height="154px">
+                <g fill="none" stroke="#f15a24" stroke-width="2">
+                  <circle cx="77" cy="77" r="72" style="
                         stroke-dasharray: 480px, 480px;
                         stroke-dashoffset: 960px;
-                      "
-                    ></circle>
-                    <circle
-                      id="colored"
-                      fill="#f15a24"
-                      cx="77"
-                      cy="77"
-                      r="72"
-                      style="
+                      "></circle>
+                  <circle id="colored" fill="#f15a24" cx="77" cy="77" r="72" style="
                         stroke-dasharray: 480px, 480px;
                         stroke-dashoffset: 960px;
-                      "
-                    ></circle>
-                    <polyline
-                      class="st0"
-                      stroke="#fff"
-                      stroke-width="8"
-                      points="40,77.8 114,77.8 "
-                      style="
+                      "></circle>
+                  <polyline class="st0" stroke="#fff" stroke-width="8" points="40,77.8 114,77.8 " style="
                         stroke-dasharray: 100px, 100px;
                         stroke-dashoffset: 200px;
-                      "
-                    />
-                  </g>
-                </svg>
-              </div>
+                      " />
+                </g>
+              </svg>
             </div>
-            <h3 class="h3 text-center">OPS!</h3>
-            <p class="text-center">
-              Ocorreu um erro e sua contribuição não pode ser enviada, tente
-              novamente
-            </p>
           </div>
+          <h3 class="h3 text-center">OPS!</h3>
+          <p class="text-center">
+            Ocorreu um erro e sua contribuição não pode ser enviada, tente
+            novamente
+          </p>
         </div>
       </div>
     </div>
-    <!-- </div> -->
-  </body>
+  </div>
+  <!-- </div> -->
+</body>
+
 </html>

@@ -226,3 +226,28 @@ footer ion-icon {
 .nav-link.active {
   color: #F56B39;
 }
+
+footer{
+  background-color: rgba(255, 198, 128, 0.4);
+  box-shadow: 0px -3px 10px -2px rgba(255, 198, 128, 0.4);
+}
+
+
+footer .h5{
+  font-size: 16px;
+  color: var(--secondary);
+  font-weight: 700;
+}
+
+footer .d-inline-flex div{
+  width: 10rem;
+}
+
+footer .d-inline-flex div a{
+  text-decoration: none;
+  color: var(--gray-dark);
+  font-size: 14px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+
+}
