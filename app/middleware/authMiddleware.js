@@ -13,7 +13,7 @@ export async function protect(req, res, next) {
     if (!token)
       throw new HttpError(401, 'O token de acesso não foi informado.');
 
-    jwt.verify(token, 'process.env.SECRET', (err, decoded) => {
+    jwt.verify(token, process.env.SECRET || 'default', (err, decoded) => {
       if (err)
         throw new HttpError(401, 'Falha ao autenticar token de acesso.');
 

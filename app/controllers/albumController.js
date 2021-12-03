@@ -9,45 +9,47 @@ export async function processData(req, res, next) {
   const { resp_name, resp_cpf } = data;
   const { title_photo, photographer } = data;
   const { name, cpf, email, phone, state, city, born_date } = data;
+  
+  const colaborator_data = {
+    name,
+    cpf,
+    email,
+    phone,
+    state,
+    city,
+    bornDate: born_date
+  }
 
   try {
-    let responsible_id = null;
+    let responsible = null;
     if (resp_cpf) {
-      let responsible_id = await Responsible.findOne({
+      let responsible = await Responsible.findOne({
         where: { cpf: resp_cpf },
         attributes: ['id']
       });
 
-      if (!responsible_id)
-        responsible_id  = await Responsible.create({
+      if (!responsible)
+        responsible  = await Responsible.create({
           name: resp_name,
           cpf: resp_cpf,
-        }).id;
+        });
+
+      colaborator_data['responsible_id'] = responsible.id
     }
 
-    let collaborator_id = await Collaborator.findOne({
+    let collaborator = await Collaborator.findOne({
       where: { cpf },
       attributes: ['id']
     });
 
-    if (!responsible_id)
-      collaborator_id = await Collaborator.create({
-        name,
-        cpf,
-        email,
-        phone,
-        state,
-        city,
-        bornDate: born_date,
-        responsible_id,
-      }).id;
+    if (!collaborator)
+      collaborator = await Collaborator.create(colaborator_data);
 
-      console.log(2, collaborator_id);
     await Photo.create({
       title: title_photo,
       img: photo,
       photographer,
-      owner: collaborator_id,
+      owner: collaborator.id,
     });
 
     res.status(201).json({ error: false });
