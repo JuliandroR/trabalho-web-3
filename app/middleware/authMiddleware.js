@@ -15,8 +15,8 @@ export async function protect(req, res, next) {
 
     jwt.verify(token, 'process.env.SECRET', (err, decoded) => {
       if (err)
-        new HttpError(401, 'Falha ao autenticar token de acesso.');
-        
+        throw new HttpError(401, 'Falha ao autenticar token de acesso.');
+
       req.userId = decoded.id;
       next();
     });
