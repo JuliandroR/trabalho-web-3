@@ -1,11 +1,25 @@
-window.onload = function() {
+if (localStorage.token !== null) {
+  let time_token = new Date(parseInt(localStorage.time_token) * 1000);
+  let now = new Date();
+  console.log(time_token);
+  console.log(now);
+
+  if (time_token - now < 0) {
+    localStorage.time_token = 0;
+    localStorage.token = null;
+    window.location.href = "/login.html";
+  }
+}
+
+window.onload = function () {
   document.getElementById("logout").addEventListener("click", function () {
     if (confirm("Tem certeza que deseja sair?")) {
       localStorage.setItem("token", null);
+      localStorage.setItem("time_token", null);
       window.location.href = "/login.html";
     }
   });
-}
+};
 
 fetch("/api/images", {
   method: "GET",

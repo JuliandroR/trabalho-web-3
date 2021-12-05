@@ -1,3 +1,14 @@
+if (localStorage.token !== null) {
+  let time_token = new Date(parseInt(localStorage.time_token) * 1000);
+  let now = new Date();
+  console.log(time_token);
+  console.log(now);
+
+  if (time_token - now > 0) {
+    window.location.href = "/adm.html";
+  }
+}
+
 window.onload = function () {
   const form = document.getElementById("form");
 
@@ -31,7 +42,9 @@ function treatReturn(response, status) {
     modal = new bootstrap.Modal(document.getElementById("failureSendModal"));
     modal.show();
   } else {
+    console.log(response.data);
     localStorage.setItem("token", response.data.token);
-    window.location.href = "/adm.html"
+    localStorage.setItem("time_token", response.data.valid_until);
+    window.location.href = "/adm.html";
   }
 }
