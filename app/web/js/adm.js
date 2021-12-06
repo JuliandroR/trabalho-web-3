@@ -1,8 +1,6 @@
 if (localStorage.token !== null) {
   let time_token = new Date(parseInt(localStorage.time_token) * 1000);
   let now = new Date();
-  console.log(time_token);
-  console.log(now);
 
   if (time_token - now < 0) {
     localStorage.time_token = 0;
@@ -19,7 +17,30 @@ window.onload = function () {
       window.location.href = "/login.html";
     }
   });
+
+  const form = document.getElementById("form")
+
+  form.onsubmit = processData;
 };
+
+
+function processData(e){
+  e.preventDefault();
+  form = e.target;
+
+  const data = new FormData(e.target);
+  let value = Object.fromEntries(data.entries());
+  console.log(value.data);
+  
+  const params = new URLSearchParams(value);
+  console.log(params.toString());
+  fetch(`/api/images?${params.toString()}`, {
+    method: "GET",
+    headers: {
+      authorization: "Bearer " + localStorage.token,
+    },
+  }).then((resp) => resp.json().then(createCards));
+}
 
 fetch("/api/images", {
   method: "GET",
@@ -29,6 +50,7 @@ fetch("/api/images", {
 }).then((resp) => resp.json().then(createCards));
 
 function createCards(data) {
+  document.getElementById("register_container").innerHTML = ""
   let registers = data;
 
   for (const key in registers) {
