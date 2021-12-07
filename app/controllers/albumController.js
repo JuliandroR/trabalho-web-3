@@ -1,6 +1,7 @@
 import { Collaborator } from "../models/collaborator";
 import { Photo } from "../models/photo";
 import { Responsible } from "../models/responsible";
+import { Op } from 'sequelize';
 
 export async function processData(req, res, next) {
   const data = req.body;
@@ -59,11 +60,26 @@ export async function processData(req, res, next) {
 }
 
 export async function getImages(req, res, next) {
+  const {data:date, cidade:city} = req.query;
+
+  const filter = {}
+  if (date) {}
+    filter.bornDate = {
+      [Op.gte]: new Date(date),
+      [Op.lte]: new Date(date) - 1 + 60 * 60 * 24 * 1000
+    }
+
+  if (city)
+    filter.city = {
+      [Op.like]: `%${city}%`
+    }
+
   try {
     const results = await Photo.findAll({
       include: {
         model: Collaborator,
         as: "collaborator",
+        where: filter,
         required: true,
         include: Responsible,
         attributes: {
