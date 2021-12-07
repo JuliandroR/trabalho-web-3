@@ -63,7 +63,7 @@ export async function getImages(req, res, next) {
   const {data:date, cidade:city} = req.query;
 
   const filter = {}
-  if (date) {}
+  if (date)
     filter.bornDate = {
       [Op.gte]: new Date(date),
       [Op.lte]: new Date(date) - 1 + 60 * 60 * 24 * 1000

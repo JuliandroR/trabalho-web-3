@@ -63,8 +63,10 @@ async function getAll(){
 }
 
 function createCards(data) {
-  console.log(data);
-  document.getElementById("register_container").innerHTML = ""
+  if (data.length === 0)
+    document.getElementById("register_container").innerHTML = `<h3 class="h3">Nenhum registro encontrado =/</h3>`
+  else
+    document.getElementById("register_container").innerHTML = ""
   let registers = data;
 
   for (const key in registers) {
