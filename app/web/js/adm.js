@@ -97,18 +97,18 @@ function createCards(data) {
               <strong>Título: </strong>
               ${registers[key].title}
             </p>
-              <span class="view" onClick="viewMore(${key}, true)">
+              <button class="view btn btn-link" onClick="viewMore(${key}, true)">
                 <ion-icon
-                  style="color: #f56b39; font-size: 36px"
+                  style="color: #f56b39; font-size: 32px"
                   name="add-circle-outline"
                 />
-              </span>
-              <span class="hidden display-none" onClick="viewMore(${key}, false)">
+              </button>
+              <button class="hidden display-none btn btn-link" onClick="viewMore(${key}, false)">
                 <ion-icon
-                  style="color: #f56b39; font-size: 36px"
+                  style="color: #f56b39; font-size: 32px"
                   name="remove-circle-outline"
                 />
-              </span>
+              </button>
           </div>
             <div class="row d-flex align-items-center justify-content-between mt-4 more-information display-none">
               <div class="col-7">
