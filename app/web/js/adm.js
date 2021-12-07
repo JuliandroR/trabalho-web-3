@@ -21,19 +21,30 @@ window.onload = function () {
   const form = document.getElementById("form")
 
   form.onsubmit = processData;
+
+  setTimeout(getAll(), 2000);
 };
 
 
 function processData(e){
+  document.getElementById("register_container").innerHTML = `<img src="../img/loading.gif" style="width: 10rem;" alt="">`
+  
   e.preventDefault();
   form = e.target;
 
-  const data = new FormData(e.target);
-  let value = Object.fromEntries(data.entries());
-  console.log(value.data);
+  const value = Object.fromEntries((new FormData(e.target)).entries());  
+  const newValue = new Object()
+
+  if(value.cidade === "" && value.data === "")
+    getAll()
+  if(value.cidade !== "")
+    newValue.cidade = value.cidade
+  if (value.data !== "")
+    newValue.data = value.data
   
-  const params = new URLSearchParams(value);
-  console.log(params.toString());
+  const params = new URLSearchParams(newValue);
+
+
   fetch(`/api/images?${params.toString()}`, {
     method: "GET",
     headers: {
@@ -42,14 +53,17 @@ function processData(e){
   }).then((resp) => resp.json().then(createCards));
 }
 
-fetch("/api/images", {
-  method: "GET",
-  headers: {
-    authorization: "Bearer " + localStorage.token,
-  },
-}).then((resp) => resp.json().then(createCards));
+async function getAll(){
+  await fetch("/api/images", {
+    method: "GET",
+    headers: {
+      authorization: "Bearer " + localStorage.token,
+    },
+  }).then((resp) => resp.json().then(createCards));
+}
 
 function createCards(data) {
+  console.log(data);
   document.getElementById("register_container").innerHTML = ""
   let registers = data;
 
