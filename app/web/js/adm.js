@@ -78,10 +78,12 @@ function createCards(data) {
     div.innerHTML = `
         <div class="card-photo row d-flex align-items-center justify-content-between">
           <div class="col-5 m-0 p-0">
+            <a href="${registers[key].img}" target="_blank">
             <img
               src="${registers[key].img}"
               class="w-100"
             />
+            </a>
           </div>
           <div class="d-flex flex-column col-7">
             <h3 class="h3 mb-3">${registers[key].collaborator.name}</h3>
